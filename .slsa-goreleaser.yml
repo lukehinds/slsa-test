@@ -3,16 +3,23 @@ version: 1
 env:
   - GO111MODULE=on
   - CGO_ENABLED=0
+
 # Flags for the compiler.
 flags:
   - -trimpath
   - -tags=netgo
-goos: linux     # same values as GOOS env variable. 
-goarch: amd64   # same values as GOARCH env variable. 
+
+goos: linux # same values as GOOS env variable.
+goarch: arm64
+
+# Entrypoint to compile. Default is the root directory.
+# main: ./path/to/main.go
+
 # Binary name.
-# {{ .OS }} will be replaced by goos field in the config file.
+# {{ .Os }} will be replaced by goos field in the config file.
 # {{ .Arch }} will be replaced by goarch field in the config file.
-binary: binary-{{ .OS }}-{{ .Arch }}
-# (Optional) ldflags generated dynamically in the workflow, and set as the `env` input variables in the workflow. 
+binary: systemd-status-leds-{{ .Arch }}-{{ .Os }}
+
+# (Optional) ldflags generated dynamically in the workflow, and set as the `env` input variables in the workflow.
 ldflags:
-  - '{{ .Env.VERSION_LDFLAGS }}'
+  - ""
