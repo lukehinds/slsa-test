@@ -18,7 +18,7 @@ goarch: arm64
 # Binary name.
 # {{ .Os }} will be replaced by goos field in the config file.
 # {{ .Arch }} will be replaced by goarch field in the config file.
-binary: systemd-status-leds-{{ .Arch }}-{{ .Os }}
+binary: slsa-test-{{ .Arch }}-{{ .Os }}
 
 # (Optional) ldflags generated dynamically in the workflow, and set as the `env` input variables in the workflow.
 ldflags:
