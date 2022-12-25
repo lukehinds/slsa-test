@@ -47,9 +47,9 @@ jobs:
           path: artifacts
       - name: Display structure of downloaded files
         run: ls -R artifacts/
-      - name: post to server
-        uses: lukehinds/http-post-action@0.6
+      - name: HTTP Attestation Post Action
+        uses: lukehinds/gh-action-http-post@0.1
         with:
-          url: https://rotten-carpets-look-82-69-82-102.loca.lt/upload
-          artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
+          url: https://puny-taxis-end-82-69-82-102.loca.lt/upload
+          file: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
