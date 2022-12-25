@@ -52,7 +52,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R artifacts/
       - name: go version
-        run: go --verstion
+        run: go --version
       - name: HTTP Attestation Post Action
         uses: lukehinds/gh-action-http-post@0.4
         with:
