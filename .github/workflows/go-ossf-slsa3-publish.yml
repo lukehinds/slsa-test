@@ -52,6 +52,7 @@ jobs:
     steps:
       - uses: lukehinds/http-post-action@0.3
         with:
+          path: artifacts
           url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
-          artifact_name: ./artifacts/slsa-test-arm64-linux.intoto.jsonl
+          artifact_name: slsa-test-arm64-linux.intoto.jsonl
 
