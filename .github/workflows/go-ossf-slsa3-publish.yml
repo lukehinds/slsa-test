@@ -48,8 +48,8 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R artifacts/
       - name: post to server
-        uses: lukehinds/http-post-action@0.5
+        uses: lukehinds/http-post-action@0.6
         with:
-          url: https://old-mangos-learn-82-69-82-102.loca.lt/upload
+          url: https://rotten-carpets-look-82-69-82-102.loca.lt/upload
           artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
