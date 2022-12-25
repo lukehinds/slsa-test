@@ -47,13 +47,10 @@ jobs:
           path: artifacts
       - name: Display structure of downloaded files
         run: ls -R artifacts/
-  post:
-    needs: download
-    runs-on: ubuntu-latest
-    steps:
-      - uses: lukehinds/http-post-action@0.3
+      - name: post to server
+        uses: lukehinds/http-post-action@0.3
         with:
           path: artifacts
           url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
-          artifact_name: slsa-test-arm64-linux.intoto.jsonl
+          artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
