@@ -45,7 +45,7 @@ jobs:
     needs: download
     runs-on: ubuntu-latest
     steps:
-      - uses: lukehinds/http-post-action@0.1
+      - uses: lukehinds/http-post-action@0.2
         with:
           url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
           artifact_name: ${{ steps.download.outputs.artifact }}
