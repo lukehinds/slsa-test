@@ -37,10 +37,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download attestation
-        uses: actions/download-artifact@v3
+      - name: Download from Artifacts
+        uses: dawidd6/action-download-artifact@v2
         with:
-          name: "${{ needs.provenance.outputs.attestation-name }}"
+          workflow: ${{ github.event.workflow.name }}
+          run_id: ${{github.event.workflow_run.id }}
+          name: slsa-test
+          path: artifacts
+      - name: Display structure of downloaded files
+        run: ls -R artifacts/
   post:
     needs: download
     runs-on: ubuntu-latest
@@ -48,5 +53,5 @@ jobs:
       - uses: lukehinds/http-post-action@0.3
         with:
           url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
-          artifact_name: /home/runner/work/slsa-test/slsa-test/slsa-test-arm64-linux.intoto.jsonl
+          artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
