@@ -47,6 +47,6 @@ jobs:
     steps:
       - uses: lukehinds/http-post-action@0.1
         with:
-          url: https://petite-plants-jog-82-69-82-102.loca.lt/upload
+          url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
           artifact_name: ${{ steps.download.outputs.artifact }}
 
