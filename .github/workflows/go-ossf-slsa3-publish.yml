@@ -48,7 +48,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R artifacts/
       - name: post to server
-        uses: lukehinds/http-post-action@0.4
+        uses: lukehinds/http-post-action@0.5
         with:
           url: https://eight-apes-shop-82-69-82-102.loca.lt/upload
           artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
