@@ -39,8 +39,9 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: SLSA_BINARY
-          path: .
+          name: my-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
   post:
     needs: download
     runs-on: ubuntu-latest
@@ -48,5 +49,5 @@ jobs:
       - uses: lukehinds/http-post-action@0.2
         with:
           url: https://pink-bottles-grab-82-69-82-102.loca.lt/upload
-          artifact_name: SLSA_BINARY
+          artifact_name: my-artifact
 
