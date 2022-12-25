@@ -42,7 +42,7 @@ jobs:
         with:
           workflow: ${{ github.event.workflow.name }}
           run_id: ${{github.event.workflow_run.id }}
-          name: slsa-test
+          name: slsa-test-arm64-linux.intoto.jsonl
           path: artifacts
       - name: Display structure of downloaded files
         run: ls -R artifacts/
