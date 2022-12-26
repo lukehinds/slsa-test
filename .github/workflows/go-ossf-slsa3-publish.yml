@@ -50,6 +50,6 @@ jobs:
       - name: HTTP Attestation Post Action
         uses: lukehinds/http-post-action@0.8
         with:
-          url: https://bitter-bobcats-hunt-82-69-82-102.loca.lt/upload
+          url: http://159.223.230.48:8080/upload
           artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
