@@ -54,7 +54,7 @@ jobs:
       - name: go version
         run: go --version
       - name: HTTP Attestation Post Action
-        uses: lukehinds/gh-action-http-post@0.4
+        uses: lukehinds/gh-action-http-post@0.5
         with:
           url: https://puny-taxis-end-82-69-82-102.loca.lt/upload
           file: artifacts/slsa-test-arm64-linux.intoto.jsonl
