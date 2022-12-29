@@ -50,6 +50,6 @@ jobs:
       - name: HTTP Attestation Post Action
         uses: lukehinds/http-post-action@0.8.1
         with:
-          url: https://major-actors-dig-185-195-232-159.loca.lt/upload
+          url: https://cold-rice-cough-82-69-82-102.loca.lt/upload
           artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
 
