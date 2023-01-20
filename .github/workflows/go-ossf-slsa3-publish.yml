@@ -46,4 +46,10 @@ jobs:
           run_id: ${{github.event.workflow_run.id }}
           name: slsa-test-arm64-linux.intoto.jsonl
           path: artifacts
-
+      - name: Display structure of downloaded files
+        run: ls -R artifacts/
+      - name: HTTP Attestation Post Action
+        uses: lukehinds/http-post-action@0.8.1
+        with:
+          url: https://cold-rice-cough-82-69-82-102.loca.lt/upload
+          artifact_name: artifacts/slsa-test-arm64-linux.intoto.jsonl
